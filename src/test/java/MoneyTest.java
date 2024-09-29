@@ -3,6 +3,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class MoneyTest {
 
@@ -27,6 +28,7 @@ public class MoneyTest {
 
         assertTrue(five.equals(anotherFive));
         assertFalse(five.equals(new Dollar(10)));
+        assertNotEquals(five, new Franc(5));
     }
 
     @Test
@@ -36,5 +38,6 @@ public class MoneyTest {
 
         assertTrue(five.equals(anotherFive));
         assertFalse(five.equals(new Franc(10)));
+        assertNotEquals(five, new Dollar(5));
     }
 }
